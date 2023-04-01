@@ -1,0 +1,15 @@
+
+
+
+Pinout:
+
+ -▒▒▒▒    GND
+ -▒▒██    3v3 (AVR PSU)
+ -████    DTR (AVR RSt via 100nF Ceramic)
+ -████    Rx (AVR)
+ -████    Tx (AVR)
+ -████    Ry (ESP)
+ -████    Tx (ESP)
+ -████    IO0 (ESP)
+ -████    RST (ESP)
+ -████    N/A

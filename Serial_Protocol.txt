@@ -1,0 +1,79 @@
+AVR --> ESP
+AVR Sends controll commands to ESP.
+
++++<cmd>;<data1>;<data2>;<data3>;<data4>+
+
+<cmd>:
+<cmd> is a placeholder for the command. 
+The command tells the ESP what the three data
+variables mean.
+
+<datax>:
+The tree data tags data1, data2, data3 and data4 are places to 
+transfer additional data. Depending on the command these
+can be a string as well as a an integer.
+
+
+All possible commands and data values:
+
+On/Off:
+	Sends on or of signal when ON/OFF button is pressed
+	<btngroup> is the a number from 0 to 6 defining the ON/OFF/Set button group.
+	<state> defines weather the ON or the OFF button is pressed (0 or 1)
+	<data3> and <data4> are not used here
+
+	+++p;<btngroup>;<state>;0;0;
+
+Set:
+	Sends the color_temp, brightness or color when button is pressed
+	<btngroup> is the a number from 0 to 6 defining the ON/OFF/Set button group.
+	<type> defines if the brightness color temp or color gets set (b: brightness, t: color_temp, c: color)
+	<val> is the raw value of the corresponding potentiometer
+	<data4> is not used here
+
+	+++s;<btngroup>;<type>;<val>;0;
+
+Scene:
+	Sends scene trigger when scene button is pressed
+	<scene> specifies the scene id (depends on which scene button is pressed
+
+	+++z;<scene>;0;0;0;
+
+Raw:
+	Sends Raw information if the state of a button or a potentiometer changes.
+	Whenever a value is '-' it means this data variable is not used in that
+	instance.
+	<btn_x> The x coordinate of a button in the button matrix when pressed
+	<btn_y> The y coordinate of a button in the button matrix when pressed
+	<pot_nr> id of the potentiometer that has changed its state
+	<pot_val> the value of the potentiometer that has changed its state 
+	+++r;<btn_x>;<btn_y>;<pot_nr>;<pot_val>;
+
+
+
+
+AVR <-- ESP
+The ESP send configuration changes and the LED color to the AVR
+(not jet implemented)
+
+
+
+
+
++++p;4;0;;;
++++z;6;;;;
++++s;4;c;0;;
++++s;4;c;170;;
++++s;4;c;341;;
++++s;4;c;682;;
+
++++s;4;b;255;;+++s;4;c;682;;
+
++++s;4;b;1023;;
+
+
+
+
+
+
+

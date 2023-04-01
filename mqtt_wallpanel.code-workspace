@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "esp_controller"
+		},
+		{
+			"path": "avr_controller"
+		}
+	],
+	"settings": {}
+}
