@@ -8,7 +8,7 @@ Pinout:
  -████    DTR (AVR RSt via 100nF Ceramic)
  -████    Rx (AVR)
  -████    Tx (AVR)
- -████    Ry (ESP)
+ -████    Rx (ESP)
  -████    Tx (ESP)
  -████    IO0 (ESP)
  -████    RST (ESP)
