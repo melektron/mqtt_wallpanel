@@ -8,6 +8,16 @@ This code is by no means clean or memory safe and there are no guarantees of it 
 
 This project allows an ESP8266 connected to an MQTT server through WiFi and send JSON commands when buttons are pressed and potentiometers are turned. This adheres to the standard JSON protocol used by SmartHome systems like HomeAssistant or zigbee2mqtt. Therefore, this can be used to directly control e.g. lights.
 
+
+## Project Structure
+
+- ```avr_controller```: The PIO firmware project for the AVR controller in the wallpanel
+- ```esp_controller```: The PIO firmware project for the ESP8266 controller in the wallpanel
+- ```hardware```: 3D model files (Sketchup) for the wallpanel. These are legacy files copied from the old project structure for preservation. There are no schematics for the board.
+- ```Progport.txt```: Description of the programming port pinout
+- ```Serial_Protocol.txt```: Description of the communication protocol between AVR and ESP
+
+
 ## Setup
 
 To use the project, you need to specify WIFI secrets, fingerprints and other configuration in the ```esp_controller/include/secrets.h``` file. Example content:
